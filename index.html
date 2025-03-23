@@ -33,5 +33,54 @@
         </a>
       </div>
     </header>
+    <div class="slider-container">
+      <div class="slides">
+        <img src="/slidebar pic/01.webp" alt="Slide 1" class="slide" />
+        <img src="/slidebar pic/02.webp" alt="Slide 2" class="slide" />
+        <img src="/slidebar pic/03jpg" alt="Slide 3" class="slide" />
+        <img src="/slidebar pic/04jpeg" alt="Slide 4" class="slide" />
+        <img src="/slidebar pic/05jpeg" alt="Slide 5" class="slide" />
+        <img src="/slidebar pic/06jpg" alt="Slide 6" class="slide" />
+      </div>
+
+      <!-- متن و دکمه -->
+      <div class="slider-content">
+        <h2>Experience Healthy and Vegetarian Food with Tarkhineh</h2>
+        <button class="order-btn">Order Food Online</button>
+      </div>
+
+      <!-- فلش های کنترلی -->
+      <button class="prev" onclick="prevSlide()">&#10094;</button>
+      <button class="next" onclick="nextSlide()">&#10095;</button>
+      <div class="slider-dots">
+        <span class="dot" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+      </div>
+    </div>
+
+    <section class="menu">
+      <div class="menu-item">
+        <div class="green-box"><img src="/menu pic/03.png" alt="Image" /></div>
+        <button class="gray-box">Main Course</button>
+      </div>
+      <div class="menu-item">
+        <div class="green-box"><img src="/menu pic/04.png" alt="Image" /></div>
+        <button class="gray-box">Appetizers</button>
+      </div>
+      <div class="menu-item">
+        <div class="green-box"><img src="/menu pic/02.png" alt="Image" /></div>
+        <button class="gray-box">Desserts</button>
+      </div>
+      <div class="menu-item">
+        <div class="green-box"><img src="/menu pic/01.png" alt="Image" /></div>
+        <button class="gray-box">Drinks</button>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
   </body>
 </html>
