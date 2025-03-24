@@ -45,3 +45,9 @@ function showSlide(index) {
     }
   });
 }
+
+// به‌روزرسانی شمارشگر کاراکترها
+function updateCharCount(textarea) {
+  const counter = document.getElementById("char-counter");
+  counter.textContent = `${textarea.value.length}/200`;
+}

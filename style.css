@@ -2,6 +2,8 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   box-sizing: border-box;
+  background: none;
+  background-color: transparent;
 }
 
 header {
@@ -151,13 +153,25 @@ nav ul li a:hover {
   background-color: #588e6a; /* تغییر رنگ در هاور */
 }
 
+.menu-section {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.menu-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40px;
+}
+
 .menu {
   display: flex;
   justify-content: space-between;
-  /* gap: 2px; */
+  gap: 2px;
   margin-left: 5%;
   margin-right: 5%;
-  margin-top: 280px;
+  margin-top: 200px;
 }
 
 .menu-item {
@@ -173,6 +187,19 @@ nav ul li a:hover {
   margin-left: 10px;
   margin-left: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.green-box img {
+  position: absolute;
+  bottom: 30%; /* نصف پایین عکس داخل مستطیل سبز */
+  left: 50%;
+  transform: translateX(-50%); /* وسط کردن عکس */
+
+  width: 300px; /* عرض ثابت برای همه تصاویر */
+  height: 300px; /* ارتفاع ثابت برای همه تصاویر */
+
+  object-fit: cover; /* برش تصویر برای تناسب با ابعاد */
+  border-radius: 50%; /* اگر می‌خواهی تصاویر دایره‌ای شوند */
 }
 
 .gray-box {
@@ -199,4 +226,302 @@ nav ul li a:hover {
 
 .gray-box:hover {
   background-color: #5a6268; /* تغییر رنگ هنگام هاور */
+}
+
+/* بخش اصلی */
+.about-section {
+  height: 390px; /* ارتفاع بخش */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("/About-pic/Background.png") center/cover; /* تصویر پس‌زمینه */
+  position: relative;
+  margin-top: 50px;
+}
+
+/* برای تار کردن پس‌زمینه */
+.about-section::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* اعمال تار شدن روی کل بخش */
+  background: rgba(0, 0, 0, 0.5); /* پس‌زمینه تیره و نیمه‌شفاف */
+  backdrop-filter: blur(1px); /* تار کردن */
+  z-index: 0;
+}
+
+/* محتوای داخلی */
+.about-content {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 80%; /* عرض کلی */
+  color: white; /* رنگ متن */
+}
+
+/* سمت چپ */
+.about-left {
+  flex: 1;
+  padding-right: 40px; /* فاصله از راست */
+}
+
+.about-left h2 {
+  font-size: 32px; /* اندازه تیتر */
+  margin-bottom: 20px;
+}
+
+.about-left h3 {
+  font-size: 16px; /* اندازه متن */
+  font-weight: normal;
+  line-height: 1.8; /* فاصله بین خطوط */
+  margin-bottom: 40px; /* فاصله از دکمه */
+}
+
+/* دکمه */
+.about-btn {
+  padding: 10px 30px;
+  font-size: 16px;
+  color: white; /* رنگ متن */
+  background: transparent; /* پس‌زمینه شفاف */
+  border: 2px solid white; /* خط حاشیه */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about-btn:hover {
+  background: rgba(255, 255, 255, 0.2); /* تغییر پس‌زمینه هنگام هاور */
+}
+
+/* سمت راست */
+.about-right {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ۲ ستون */
+  gap: 40px; /* فاصله بین آیکون‌ها */
+}
+
+/* آیکون‌ها */
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.icon-box img {
+  width: 60px; /* اندازه آیکون */
+  height: 60px;
+  margin-bottom: 10px; /* فاصله از متن */
+}
+
+.icon-box h3 {
+  font-size: 18px; /* اندازه متن زیر آیکون */
+}
+
+/* بخش اصلی شعبات */
+.branches-section {
+  text-align: center; /* وسط‌چین کردن محتوا */
+  margin: 80px 0; /* فاصله از بخش‌های قبلی و بعدی */
+}
+
+/* عنوان اصلی (Our Branches) */
+.branches-title {
+  font-size: 36px; /* اندازه‌ی عنوان */
+  margin-bottom: 50px; /* فاصله از باکس‌ها */
+  color: #333;
+}
+
+/* کانتینر باکس‌ها */
+.branches-container {
+  display: flex;
+  justify-content: space-between; /* فاصله‌ی برابر بین باکس‌ها */
+  gap: 20px; /* فاصله‌ی بین باکس‌ها */
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+/* باکس شعبات */
+.branch-box {
+  background: white; /* پس‌زمینه سفید */
+  border: solid #171717 0.5px;
+  border-radius: 16px; /* گوشه‌های گرد */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* سایه‌ی زیبا */
+  padding: 20px; /* فاصله داخلی */
+  flex: 1; /* اندازه برابر بین باکس‌ها */
+  max-width: 300px; /* حداکثر عرض */
+  transition: transform 0.3s ease; /* انیمیشن هاور */
+  position: relative; /* برای دکمه */
+}
+
+/* افکت هاور روی باکس‌ها */
+.branch-box:hover {
+  transform: translateY(-10px); /* حرکت به بالا هنگام هاور */
+}
+
+/* تصویر داخل باکس */
+.branch-box img {
+  width: 100%; /* تصویر به اندازه کامل باکس */
+  height: 200px; /* ارتفاع ثابت */
+  object-fit: cover; /* نمایش صحیح تصویر */
+  border-radius: 12px; /* گوشه‌های گرد تصویر */
+}
+
+/* عنوان شعبه (h3) */
+.branch-box h3 {
+  font-size: 22px; /* اندازه‌ی عنوان */
+  margin: 20px 0 10px; /* فاصله‌ی بالا و پایین */
+  color: #2c3e50; /* رنگ تیره‌تر برای خوانایی */
+}
+
+/* زیرعنوان شعبه (h4) */
+.branch-box h4 {
+  font-size: 16px; /* اندازه‌ی متن */
+  font-weight: normal;
+  color: #7f8c8d; /* رنگ خاکستری زیبا */
+  margin-bottom: 20px;
+}
+
+/* دکمه مخفی */
+.branch-btn {
+  display: none; /* در حالت عادی مخفی */
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #2c3e50;
+  border: 2px solid #2c3e50;
+  border-radius: 8px;
+  background: transparent; /* دکمه شفاف */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* نمایش دکمه هنگام هاور */
+.branch-box:hover .branch-btn {
+  display: inline-block; /* نمایش دکمه */
+}
+
+/* افکت هاور روی دکمه */
+.branch-btn:hover {
+  background: #2c3e50;
+  color: white; /* تغییر رنگ دکمه */
+}
+
+/* تنظیمات کلی فوتر */
+.footer-section {
+  background: url("/footer/istockphoto-882125314-612x612.jpg") center/cover;
+  height: 319px;
+  color: white;
+  padding: 40px 5%;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* نیمه چپ */
+.footer-left {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-column h3 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.footer-column h4 {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.footer-column a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.social-icons a img {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  transition: transform 0.3s;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.2);
+}
+
+/* نیمه راست */
+.footer-right h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.message-container {
+  display: flex;
+  gap: 50px;
+}
+
+/* فرم اطلاعات */
+.info-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid white;
+  border-radius: 8px;
+  background: transparent;
+  color: white;
+  outline: none;
+}
+
+/* فرم پیام */
+.message-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.message-form textarea {
+  width: 100%;
+  height: 80px;
+  padding: 12px;
+  border: 1px solid white;
+  border-radius: 8px;
+  background: transparent;
+  color: white;
+  resize: none;
+  outline: none;
+}
+
+.char-counter {
+  text-align: right;
+  font-size: 14px;
+  color: #ddd;
+}
+
+.send-btn {
+  padding: 12px 24px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.send-btn:hover {
+  background: white;
+  color: black;
 }
