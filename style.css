@@ -38,7 +38,7 @@ nav ul li a:hover {
   text-decoration-line: underline;
 }
 
-.icons {
+/* .icons {
   display: flex;
   align-items: center;
   gap: 1.25rem;
@@ -53,7 +53,7 @@ nav ul li a:hover {
   width: 30px;
   height: 30px;
   display: block;
-}
+} */
 
 /* استایل جعبه جستجو */
 .search-container {
@@ -769,6 +769,59 @@ send-btn::placeholder {
   }
 }
 
+@media (max-width: 768px) {
+  /* تغییرات بخش شعبات */
+  .branches-container {
+    flex-direction: row; /* تغییر جهت به ردیفی */
+    flex-wrap: wrap; /* امکان رفتن به خط بعد */
+    justify-content: space-between; /* فاصله بین آیتم‌ها */
+    gap: 20px; /* فاصله بین ردیف‌ها و ستون‌ها */
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .branch-box {
+    width: calc(50% - 10px); /* عرض 50% با احتساب فاصله */
+    max-width: none; /* حذف محدودیت حداکثر عرض */
+    margin-bottom: 30px; /* فاصله از پایین */
+  }
+
+  /* تنظیمات تصاویر شعبات */
+  .branch-box img {
+    height: 150px; /* کاهش ارتفاع تصاویر */
+  }
+
+  /* نمایش همیشگی دکمه‌ها در موبایل (اختیاری) */
+  .branch-btn {
+    display: inline-block !important;
+    margin-top: 15px;
+    width: 100%;
+  }
+}
+
+/* @media (max-width: 768px) {
+  .branches-section {
+    padding: 0 15px; 
+  }
+
+  .branches-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px; 
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .branch-box {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .branch-box:hover {
+    transform: none; 
+  }
+} */
+
 /* Media Query برای دستگاه‌های با عرض بین 768px و 1024px (تبلت) */
 @media (min-width: 769px) and (max-width: 1024px) {
   /* هدر */
@@ -857,7 +910,7 @@ send-btn::placeholder {
 
   .icons {
     gap: 1.5rem;
-    margin-right: 5%; /* ثابت نگه داشتن فاصله از راست */
+    margin-right: -20%; /* ثابت نگه داشتن فاصله از راست */
   }
 }
 
@@ -880,5 +933,14 @@ send-btn::placeholder {
   .icons a img {
     width: 36px;
     height: 36px; /* بزرگتر کردن آیکون‌ها */
+  }
+
+  .icons {
+    gap: 1.5rem;
+    margin-right: -30%; /* ثابت نگه داشتن فاصله از راست */
+  }
+
+  #result-list {
+    font-size: x-large;
   }
 }
