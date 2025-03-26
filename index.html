@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tarkhineh Restaurant</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -12,13 +13,20 @@
         <h1>Tarkhineh</h1>
       </div>
       <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Branches</a></li>
-          <li><a href="#">Menu</a></li>
-          <li><a href="#">Franchise</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Contact Us</a></li>
+        <div class="search-container hidden" id="search-container">
+          <input
+            type="text"
+            id="search-box"
+            placeholder="Search..."
+            onkeyup="liveSearch()"
+          />
+        </div>
+        <ul id="result-list">
+          <li>Home</li>
+          <li>Menu</li>
+          <li>Branches</li>
+          <li>Contact Us</li>
+          <li>About Us</li>
         </ul>
       </nav>
       <div class="icons">
@@ -26,11 +34,16 @@
           <img src="/icon/user.png" alt="User" />
         </a>
         <a href="#" class="shop-icon">
-          <img src="/icon/shop.png" alt="Shop" />
+          <img src="/icon/coffee.png" alt="Shop" />
         </a>
-        <a href="#" class="search-icon">
+        <a href="#" class="search-icon" onclick="toggleSearch()">
           <img src="/icon/search.png" alt="Search" />
         </a>
+      </div>
+      <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </header>
     <div class="slider-container">
@@ -170,28 +183,44 @@
       </div>
     </section>
 
+    <a
+      href="https://wa.me/4915123456789"
+      class="whatsapp-float"
+      target="_blank"
+      aria-label="Chatte mit uns auf WhatsApp"
+    >
+      <img src="/icon/whatsapp.png" alt="whatsapp" />
+    </a>
+
     <footer class="footer-section">
       <div class="footer-container">
         <!-- نیمه چپ -->
         <div class="footer-left">
           <!-- ستون اول -->
           <div class="footer-column">
-            <h3>Contact Us</h3>
-            <h4>Phone: +98 912 345 6789</h4>
-            <h4>Email: info@tarkhineh.com</h4>
+            <h3>Quick Access</h3>
+            <h4><a href="#">FAQs</a></h4>
+            <h4><a href="#">Tarkhineh Policies</a></h4>
+            <h4><a href="#">Privacy Policy</a></h4>
+
             <div class="social-icons">
-              <a href="#"><img src="/icon/instagram.png" alt="Instagram" /></a>
-              <a href="#"><img src="/icon/facebook.png" alt="Facebook" /></a>
-              <a href="#"><img src="/icon/telegram.png" alt="Telegram" /></a>
+              <a href="#"
+                ><img src="/icon/instagram01.png" alt="Instagram"
+              /></a>
+              <a href="#"><img src="/icon/facebook02.png" alt="Facebook" /></a>
+              <a href="#"><img src="/icon/paper.png" alt="Telegram" /></a>
             </div>
           </div>
 
           <!-- ستون دوم -->
           <div class="footer-column">
-            <h3>Quick Links</h3>
-            <h4><a href="#">Home</a></h4>
-            <h4><a href="#">Menu</a></h4>
-            <h4><a href="#">Branches</a></h4>
+            <h3>Tarkhineh Branches</h3>
+            <h4>Köln Branch</h4>
+            <h4>Dortmund Branch</h4>
+            <h4>Düsseldorf Branch</h4>
+            <h4>Aachen Branch</h4>
+            <h4>Phone: +98 912 345 6789</h4>
+            <h4>Email: info@tarkhineh.com</h4>
           </div>
         </div>
 

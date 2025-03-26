@@ -51,3 +51,33 @@ function updateCharCount(textarea) {
   const counter = document.getElementById("char-counter");
   counter.textContent = `${textarea.value.length}/200`;
 }
+
+// تابع جستجوی زنده
+function liveSearch() {
+  const input = document.getElementById("search-box");
+  const filter = input.value.toLowerCase();
+  const items = document.querySelectorAll("#result-list li");
+
+  items.forEach((item) => {
+    const text = item.textContent.toLowerCase();
+    item.style.display = text.includes(filter) ? "block" : "none";
+  });
+}
+
+// نمایش یا مخفی کردن جعبه جستجو
+function toggleSearch() {
+  const searchContainer = document.getElementById("search-container");
+  searchContainer.classList.toggle("hidden");
+
+  const searchBox = document.getElementById("search-box");
+  if (!searchContainer.classList.contains("hidden")) {
+    searchBox.focus(); // فوکوس روی اینپوت
+  }
+}
+
+document
+  .querySelector(".hamburger-menu")
+  .addEventListener("click", function () {
+    this.classList.toggle("active");
+    document.querySelector("nav ul").classList.toggle("active");
+  });

@@ -55,10 +55,69 @@ nav ul li a:hover {
   display: block;
 }
 
+/* استایل جعبه جستجو */
+.search-container {
+  width: 200px;
+  position: absolute;
+  top: 60px; /* تنظیم فاصله از بالا */
+  right: 30px; /* قرار دادن در سمت راست */
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+#search-box {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #555;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+}
+
+#result-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+#result-list li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#result-list li:hover {
+  background: #f0f0f0;
+}
+
+/* مخفی کردن */
+.hidden {
+  display: none;
+}
+
+/* استایل برای آیکون‌ها */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.icons a img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s;
+}
+.icons a:hover img {
+  transform: scale(1.2);
+}
+
 .slider-container {
   position: relative;
   width: 100vw;
-  height: 336px;
+  height: auto;
   overflow: hidden;
 }
 
@@ -101,7 +160,7 @@ nav ul li a:hover {
 }
 
 .order-btn:hover {
-  background-color: #e67e22;
+  background: rgba(255, 255, 255, 0.2); /* تغییر پس‌زمینه هنگام هاور */
 }
 
 .prev,
@@ -280,7 +339,8 @@ nav ul li a:hover {
   font-size: 16px;
   color: white; /* رنگ متن */
   background: transparent; /* پس‌زمینه شفاف */
-  border: 2px solid white; /* خط حاشیه */
+  border: 1px solid white; /* خط حاشیه */
+  border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -402,9 +462,42 @@ nav ul li a:hover {
   color: white; /* تغییر رنگ دکمه */
 }
 
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px; /* Sayfanın altından mesafe */
+  right: 20px; /* Sayfanın sağından mesafe */
+  background-color: transparent; /* WhatsApp yeşil rengi */
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Yuvarlak ikon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000; /* Diğer içeriklerin üzerinde göster */
+  text-decoration: none;
+}
+
+.whatsapp-float img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #128c7e;
+}
+.whatsapp-float i {
+  color: #fff;
+}
+
 /* تنظیمات کلی فوتر */
 .footer-section {
-  background: url("/footer/istockphoto-882125314-612x612.jpg") center/cover;
+  background: url("/footer/magill-estate.jpg") center/cover;
   height: 319px;
   color: white;
   padding: 40px 5%;
@@ -477,7 +570,7 @@ nav ul li a:hover {
   width: 100%;
   padding: 12px;
   border: 1px solid white;
-  border-radius: 8px;
+  border-radius: 4px;
   background: transparent;
   color: white;
   outline: none;
@@ -496,7 +589,7 @@ nav ul li a:hover {
   height: 80px;
   padding: 12px;
   border: 1px solid white;
-  border-radius: 8px;
+  border-radius: 4px;
   background: transparent;
   color: white;
   resize: none;
@@ -510,16 +603,209 @@ nav ul li a:hover {
 }
 
 .send-btn {
+  width: 150px;
   padding: 12px 24px;
-  border: 2px solid white;
+  border: 1px solid white;
   background: transparent;
   color: white;
-  border-radius: 8px;
+  font-weight: bold;
+  border-radius: 4px;
   cursor: pointer;
   transition: background 0.3s;
 }
 
 .send-btn:hover {
-  background: white;
-  color: black;
+  background: rgba(255, 255, 255, 0.2); /* تغییر پس‌زمینه هنگام هاور */
+}
+
+input::placeholder,
+textarea::placeholder,
+send-btn::placeholder {
+  color: #ffffff; /* رنگ دلخواه */
+  opacity: 1; /* برای نمایش کامل در برخی مرورگرها */
+  font-weight: bold;
+}
+
+/* Media Query برای دستگاه‌های با عرض کمتر از 768px (موبایل) */
+@media (max-width: 768px) {
+  /* هدر */
+  header {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .logo h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .icons {
+    margin-top: 15px;
+  }
+
+  /* جعبه جستجو */
+  .search-container {
+    width: 90%;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+  }
+
+  /* اسلایدر */
+  .slider-container {
+    height: 250px;
+  }
+
+  .slide {
+    height: 250px;
+  }
+
+  .slider-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .order-btn {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  /* منو */
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    gap: 150px;
+  }
+
+  .menu-item {
+    width: 80%;
+    height: 180px;
+  }
+
+  .green-box img {
+    width: 200px;
+    height: 200px;
+    bottom: 40%;
+  }
+
+  .gray-box {
+    width: 60%;
+    height: 40px;
+    bottom: -20px;
+  }
+
+  /* بخش درباره ما */
+  .about-section {
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .about-content {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .about-left {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .about-right {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* شعبات */
+  .branches-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .branch-box {
+    max-width: 90%;
+    margin-bottom: 30px;
+  }
+
+  /* فوتر */
+  .footer-section {
+    height: auto;
+    padding: 30px 5%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .footer-left {
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .message-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* دکمه واتساپ */
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .whatsapp-float img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Media Query برای دستگاه‌های با عرض بین 768px و 1024px (تبلت) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* هدر */
+  header {
+    padding: 15px;
+  }
+
+  /* منو */
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 100px;
+  }
+
+  .menu-item {
+    width: 45%;
+    margin-bottom: 100px;
+  }
+
+  /* شعبات */
+  .branches-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .branch-box {
+    max-width: 45%;
+    margin-bottom: 30px;
+  }
+
+  /* فوتر */
+  .footer-left {
+    gap: 30px;
+  }
+
+  .message-container {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
