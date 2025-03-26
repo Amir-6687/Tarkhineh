@@ -780,7 +780,8 @@ send-btn::placeholder {
   .menu {
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 120px;
+    gap: 100px 30px;
   }
 
   .menu-item {
@@ -807,5 +808,77 @@ send-btn::placeholder {
   .message-container {
     flex-direction: column;
     gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: row; /* تغییر به ردیفی */
+    flex-wrap: wrap; /* امکان رفتن به خط بعد */
+    justify-content: center;
+    margin-top: 100px;
+    gap: 80px 20px; /* فاصله عمودی 80px و افقی 20px */
+  }
+
+  .menu-item {
+    width: 45%; /* تقریباً نیمی از عرض */
+    height: 160px; /* کاهش ارتفاع */
+    margin-bottom: 60px; /* فاصله از آیتم بعدی */
+  }
+
+  .green-box img {
+    width: 180px;
+    height: 180px;
+    bottom: 35%;
+  }
+
+  .gray-box {
+    width: 70%;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  #result-list {
+    max-height: none; /* حذف محدودیت ارتفاع */
+    overflow-y: visible; /* غیرفعال کردن اسکرول */
+  }
+
+  #result-list li {
+    padding: 12px 15px; /* افزایش فضای آیتم‌ها */
+  }
+}
+
+@media (min-width: 1440px) {
+  /* برای لپتاپ‌های بزرگ */
+  header {
+    padding: 20px 5%; /* محدود کردن فاصله در صفحه‌های عریض */
+  }
+
+  .icons {
+    gap: 1.5rem;
+    margin-right: 5%; /* ثابت نگه داشتن فاصله از راست */
+  }
+}
+
+@media (max-width: 1024px) {
+  .menu-item:nth-child(odd) {
+    margin-right: auto; /* آیتم‌های فرد به چپ متمایل */
+  }
+
+  .menu-item:nth-child(even) {
+    margin-left: auto; /* آیتم‌های زوج به راست متمایل */
+  }
+}
+
+@media (min-width: 2560px) {
+  /* برای صفحه‌های 4K */
+  header {
+    padding: 25px 10%;
+  }
+
+  .icons a img {
+    width: 36px;
+    height: 36px; /* بزرگتر کردن آیکون‌ها */
   }
 }
