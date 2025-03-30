@@ -26,7 +26,7 @@ Tarkhineh ist eine moderne Online-Restaurant-Webanwendung, die mit React.js und 
 
 ## 🚀 Installation & Einrichtung
 
-```bash
+bash
 Projekt klonen
 git clone https://github.com/Amir-6687/Tarkhineh.git
 Abhängigkeiten installieren
@@ -34,7 +34,6 @@ cd Tarkhineh
 npm install
 Entwicklungsserver starten
 npm run dev
-
 
 ## 📁 Projektstruktur
 
@@ -74,7 +73,6 @@ Dieses Projekt ist unter der MIT-Lizenz lizenziert.
 
 ## 📞 Kontakt
 
-
 - E-Mail: [example@email.com](mailto:example@email.com)
 - Webseite: [www.tarkhineh.com](http://www.tarkhineh.com)
 
@@ -83,4 +81,3 @@ Dieses Projekt ist unter der MIT-Lizenz lizenziert.
 <div align="center">
   Mit ❤️ erstellt von Amir
 </div>
-```
