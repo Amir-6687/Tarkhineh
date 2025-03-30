@@ -81,3 +81,39 @@ document
     this.classList.toggle("active");
     document.querySelector("nav ul").classList.toggle("active");
   });
+
+// اضافه کردن عملکرد کلیک برای منوهای کشویی
+document.querySelectorAll(".dropdown").forEach((dropdown) => {
+  dropdown.addEventListener("click", function (e) {
+    // جلوگیری از بسته شدن منو با کلیک روی خود منو
+    if (e.target.closest(".dropdown-content")) return;
+
+    // toggle کلاس active
+    this.classList.toggle("active");
+
+    // بستن سایر منوهای باز
+    document.querySelectorAll(".dropdown").forEach((other) => {
+      if (other !== this) other.classList.remove("active");
+    });
+
+    // جلوگیری از انتشار رویداد به document
+    e.stopPropagation();
+  });
+});
+
+// بستن منو با کلیک بیرون از آن
+document.addEventListener("click", function (e) {
+  if (!e.target.closest(".dropdown")) {
+    document.querySelectorAll(".dropdown").forEach((dropdown) => {
+      dropdown.classList.remove("active");
+    });
+  }
+});
+
+// جلوگیری از بسته شدن منو هنگام کلیک روی آیتم‌های داخلی
+document.querySelectorAll(".dropdown-content li").forEach((item) => {
+  item.addEventListener("click", function (e) {
+    e.stopPropagation();
+    // اینجا می‌توانید کد مربوط به کلیک روی هر آیتم را اضافه کنید
+  });
+});
