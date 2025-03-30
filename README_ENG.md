@@ -26,7 +26,7 @@ Tarkhineh is a modern online restaurant web application built with React.js and 
 
 ## 🚀 Installation & Setup
 
-```bash
+bash
 Clone the project
 git clone https://github.com/Amir-6687/Tarkhineh.git
 Install dependencies
@@ -34,7 +34,6 @@ cd Tarkhineh
 npm install
 Run development server
 npm run dev
-``
 
 ## 📁 Project Structure
 
@@ -56,20 +55,17 @@ Tarkhineh/
 - [ ] User authentication system
 - [ ] Online table reservation system
 - [ ] Rating and review system
-- [ ] Admin dashboard
+- [ ] Admin panel
 - [ ] Online payment integration
 
-## 📞 Contact
+## 👥 Contributing
 
-- Email: [example@email.com](mailto:example@email.com)
-- Website: [www.tarkhineh.com](http://www.tarkhineh.com)
+We welcome contributions! To contribute:
 
----
-
-<div align="center">
-  Created with ❤️ by Amir
-</div>
-```
+1. Fork the project
+2. Create a new branch
+3. Commit your changes
+4. Create a Pull Request
 
 ## 📝 License
 
@@ -83,6 +79,5 @@ This project is licensed under the MIT License.
 ---
 
 <div align="center">
-  Created with ❤️ by Amir
+  Made with ❤️ by Amir
 </div>
-```
