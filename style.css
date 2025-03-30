@@ -1,3 +1,12 @@
+/* Variables */
+:root {
+  --primary-color: #417f56;
+  --secondary-color: #2c3e50;
+  --text-color: #171717;
+  --background-color: #f9f9f9;
+  --transition-speed: 0.3s;
+}
+
 /* Reset Styles */
 * {
   margin: 0;
@@ -9,16 +18,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: var(--background-color);
-}
-
-/* Variables */
-:root {
-  --primary-color: #417f56;
-  --secondary-color: #2c3e50;
-  --text-color: #171717;
-  --background-color: #f9f9f9;
-  --transition-speed: 0.3s;
+  background-color: var(--text-color);
 }
 
 /* Header Styles */
@@ -71,8 +71,8 @@ nav ul li a:hover {
 .search-container {
   width: 200px;
   position: absolute;
-  top: 120px; /* تنظیم فاصله از بالا */
-  right: 30px; /* قرار دادن در سمت راست */
+  top: 90px; /* تنظیم فاصله از بالا */
+  right: 20px; /* قرار دادن در سمت راست */
   background: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -87,7 +87,7 @@ nav ul li a:hover {
   width: 100%;
   padding: 12px;
   border: 1px solid #555;
-  background-color: #417f56;
+  background-color: #95c0a3;
   border-radius: 8px;
   outline: none;
   font-size: 16px;
@@ -235,6 +235,10 @@ nav ul li a:hover {
   margin: 80px auto;
 }
 
+.menu-section h2 {
+  color: var(--background-color);
+}
+
 .menu-title {
   font-size: 36px;
   font-weight: bold;
@@ -277,14 +281,7 @@ nav ul li a:hover {
   height: 220px; /* ارتفاع ثابت برای همه تصاویر */
 
   object-fit: cover; /* برش تصویر برای تناسب با ابعاد */
-  border-radius: 50%; /* اگر می‌خواهی تصاویر دایره‌ای شوند */
   margin: 10px 5px;
-}
-
-.menu-item:nth-child(3) .green-box img {
-  width: 250px;
-  height: 250px; /* ارتفاع بیشتر برای تصویر */
-  margin: 10px 10px;
 }
 
 .menu-item:nth-child(4) .green-box img {
@@ -411,6 +408,10 @@ nav ul li a:hover {
 .branches-section {
   text-align: center; /* وسط‌چین کردن محتوا */
   margin: 80px 0; /* فاصله از بخش‌های قبلی و بعدی */
+}
+
+.branches-section h2 {
+  color: var(--background-color);
 }
 
 /* عنوان اصلی (Our Branches) */
@@ -831,29 +832,6 @@ send-btn::placeholder {
     width: 100%;
   }
 }
-
-/* @media (max-width: 768px) {
-  .branches-section {
-    padding: 0 15px; 
-  }
-
-  .branches-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 15px; 
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .branch-box {
-    width: 100%;
-    margin-bottom: 0;
-  }
-
-  .branch-box:hover {
-    transform: none; 
-  }
-} */
 
 /* Media Query برای دستگاه‌های با عرض بین 768px و 1024px (تبلت) */
 @media (min-width: 769px) and (max-width: 1024px) {
