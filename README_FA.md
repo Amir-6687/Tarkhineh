@@ -1,20 +1,3 @@
-# 🌿 Tarkhineh Restaurant
-
-<div align="center">
-  <img src="./src/assets/images/logo.png" alt="Tarkhineh Logo" width="200"/>
-</div>
-
-Welcome to Tarkhineh Restaurant project! Please check our documentation in your preferred language:
-
-- [English Documentation](./README_ENG.md)
-- [مستندات فارسی](./README_FA.md)
-- [Deutsche Dokumentation](./README_DE.md)
-
----
-
-<div align="center">
-  Made with ❤️ by Amir | Mit ❤️ erstellt von Amir | ساخته شده با ❤️ توسط امیر
-</div> 
 # 🌿 رستوران ترخینه
 
 <div align="center">
@@ -41,6 +24,17 @@ Welcome to Tarkhineh Restaurant project! Please check our documentation in your 
 - ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 - ![Swiper](https://img.shields.io/badge/Swiper-6332F6?style=for-the-badge&logo=swiper&logoColor=white)
 
+## 🚀 نصب و راه‌اندازی
+
+bash
+کلون کردن پروژه
+git clone https://github.com/Amir-6687/Tarkhineh.git
+نصب وابستگی‌ها
+cd Tarkhineh
+npm install
+اجرای پروژه در محیط توسعه
+npm run dev
+
 ## 📁 ساختار پروژه
 
 Tarkhineh/
@@ -56,7 +50,7 @@ Tarkhineh/
 ├── public/
 └── package.json
 
-## 🎯 ویژگی‌های آینده
+## 🎯 قابلیت‌های آینده
 
 - [ ] سیستم احراز هویت کاربران
 - [ ] سیستم رزرو آنلاین میز
@@ -64,17 +58,14 @@ Tarkhineh/
 - [ ] پنل ادمین
 - [ ] سیستم پرداخت آنلاین
 
-## 📞 تماس با ما
+## 👥 مشارکت
 
-- ایمیل: [example@email.com](mailto:example@email.com)
-- وبسایت: [www.tarkhineh.com](http://www.tarkhineh.com)
+از مشارکت شما در این پروژه استقبال می‌کنیم! لطفاً برای مشارکت:
 
----
-
-<div align="center">
-  Created with ❤️ by Amir
-</div>
-```
+1. پروژه را fork کنید
+2. یک branch جدید ایجاد کنید
+3. تغییرات خود را commit کنید
+4. یک Pull Request ایجاد کنید
 
 ## 📝 لایسنس
 
@@ -88,6 +79,5 @@ Tarkhineh/
 ---
 
 <div align="center">
-  Created with ❤️ by Amir
+ ساخته شده با ❤️ توسط امیر اکبری 
 </div>
-```
