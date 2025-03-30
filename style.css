@@ -291,7 +291,7 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("/About-pic/Background.png") center/cover; /* تصویر پس‌زمینه */
+  background: url("./About-pic/Background.png") center/cover; /* تصویر پس‌زمینه */
   position: relative;
   margin-top: 50px;
 }
@@ -497,7 +497,7 @@ nav ul li a:hover {
 
 /* تنظیمات کلی فوتر */
 .footer-section {
-  background: url("/footer/magill-estate.jpg") center/cover;
+  background: url("./footer/magill-estate.jpg") center/cover;
   height: 319px;
   color: white;
   padding: 40px 5%;
