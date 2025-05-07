@@ -720,8 +720,35 @@ send-btn::placeholder {
 @media (max-width: 768px) {
   /* هدر */
   header {
-    flex-direction: column;
-    padding: 15px;
+    flex-direction: row; /* اطمینان از چیدمان افقی */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  /* لوگو */
+  .logo {
+    order: 1;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /* منوی اصلی */
+  nav {
+    order: 3;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* نمایش همیشگی منو */
+  .nav-links {
+    position: static;
+    width: 100%;
+    height: auto;
+    background: transparent;
+    box-shadow: none;
+    display: flex !important;
   }
 
   .logo h1 {
@@ -730,13 +757,43 @@ send-btn::placeholder {
   }
 
   nav ul {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
+    flex-direction: row; /* تغییر از column به row */
+    flex-wrap: wrap; /* اجازه بدهد آیتم‌ها به خط بعد بروند اگر جا نبود */
+    justify-content: center; /* تراز وسط افقی */
+    gap: 15px; /* فاصله بین آیتم‌ها */
+    padding: 10px 0; /* padding بالا و پایین */
+  }
+
+  /* nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: center;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+    white-space: nowrap;
+    scrollbar-width: none;
+  } */
+
+  nav ul li {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  /* استایل منوی کشویی برای موبایل */
+  .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
   }
 
   .icons {
     margin-top: 15px;
+    order: 2;
+    margin-top: 0;
   }
 
   /* جعبه جستجو */
@@ -773,6 +830,11 @@ send-btn::placeholder {
     align-items: center;
     margin-top: 50px;
     gap: 150px;
+  }
+
+  /* دکمه منو */
+  .menu-btn {
+    display: none; /* اگر می‌خواهید همیشه منو نمایش داده شود */
   }
 
   .menu-item {
