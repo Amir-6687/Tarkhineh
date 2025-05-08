@@ -1,8 +1,12 @@
 let currentIndex = 0;
 const slides = document.querySelector(".slides");
-const totalSlides = document.querySelectorAll(".slide").length;
+const slideElements = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+const totalSlides = slideElements.length;
 
+// تابع اصلی برای نمایش اسلاید
 function showSlide(index) {
+  // محدود کردن index به محدوده معتبر
   if (index < 0) {
     currentIndex = totalSlides - 1;
   } else if (index >= totalSlides) {
@@ -10,41 +14,63 @@ function showSlide(index) {
   } else {
     currentIndex = index;
   }
+
+  // حرکت اسلایدر
   slides.style.transform = `translateX(-${currentIndex * 100}vw)`;
+
+  // به روزرسانی نقاط
+  updateDots();
 }
 
+// تابع برای به روزرسانی نقاط
+function updateDots() {
+  dots.forEach((dot, i) => {
+    if (i === currentIndex) {
+      dot.classList.add("active");
+    } else {
+      dot.classList.remove("active");
+    }
+  });
+}
+
+// تابع برای تغییر به اسلاید بعدی
 function nextSlide() {
   showSlide(currentIndex + 1);
 }
 
+// تابع برای تغییر به اسلاید قبلی
 function prevSlide() {
   showSlide(currentIndex - 1);
 }
 
-// تغییر خودکار اسلاید هر 5 ثانیه
-setInterval(nextSlide, 5000);
-
-const dots = document.querySelectorAll(".dot");
-
-function showSlide(index) {
-  if (index < 0) {
-    currentIndex = totalSlides - 1;
-  } else if (index >= totalSlides) {
-    currentIndex = 0;
-  } else {
-    currentIndex = index;
-  }
-
-  slides.style.transform = `translateX(-${currentIndex * 100}vw)`;
-
-  // تغییر وضعیت نقاط
-  dots.forEach((dot, i) => {
-    dot.classList.remove("active");
-    if (i === currentIndex) {
-      dot.classList.add("active");
-    }
-  });
+// تابع برای رفتن به اسلاید خاص
+function goToSlide(index) {
+  showSlide(index);
 }
+
+// تنظیم interval برای تغییر خودکار اسلایدها
+let slideInterval = setInterval(nextSlide, 3000);
+
+// توقف interval وقتی کاربر با اسلایدر تعامل دارد
+function pauseSlider() {
+  clearInterval(slideInterval);
+}
+
+// شروع مجدد interval
+function resumeSlider() {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(nextSlide, 3000);
+}
+
+// رویدادهای کلیک برای نقاط
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    goToSlide(index);
+  });
+});
+
+// مقداردهی اولیه
+showSlide(0);
 
 // به‌روزرسانی شمارشگر کاراکترها
 function updateCharCount(textarea) {
