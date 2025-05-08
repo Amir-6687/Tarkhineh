@@ -101,12 +101,29 @@ function toggleSearch() {
   }
 }
 
+// همبرگر منو
 document
   .querySelector(".hamburger-menu")
   .addEventListener("click", function () {
     this.classList.toggle("active");
-    document.querySelector("nav ul").classList.toggle("active");
+    document.querySelector("nav").classList.toggle("active");
   });
+
+// بستن منو هنگام کلیک روی لینک‌ها
+document.querySelectorAll("nav a").forEach((link) => {
+  link.addEventListener("click", () => {
+    document.querySelector(".hamburger-menu").classList.remove("active");
+    document.querySelector("nav").classList.remove("active");
+  });
+});
+
+// بستن منو هنگام کلیک بیرون از آن
+document.addEventListener("click", function (e) {
+  if (!e.target.closest("nav") && !e.target.closest(".hamburger-menu")) {
+    document.querySelector(".hamburger-menu").classList.remove("active");
+    document.querySelector("nav").classList.remove("active");
+  }
+});
 
 // اضافه کردن عملکرد کلیک برای منوهای کشویی
 document.querySelectorAll(".dropdown").forEach((dropdown) => {
